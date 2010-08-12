@@ -73,6 +73,11 @@ if has('win32')
 endif
 behave xterm
 
+runtime! autoload/pathogen.vim
+if exists('g:loaded_pathogen')
+  call pathogen#runtime_prepend_subdirectories(expand('~/.vim/bundles'))
+end
+
 " Functions {{{
 fun! Print(...)
   let l:colo = g:colors_name
@@ -164,8 +169,6 @@ nmap <silent> <Up> :wincmd k<CR>
 nmap <silent> <Down> :wincmd j<CR>
 nmap <silent> <Left> :wincmd h<CR>
 nmap <silent> <Right> :wincmd l<CR>
-
-nmap <F8> :TlistToggle<CR>
 
 " Mouse {{{
 if has('mouse')
@@ -388,10 +391,6 @@ set titleold=
 set ttyfast
 set ttybuiltin
 set lazyredraw
-
-" Don't trust the sanity of the current user shell
-let &shell = "/bin/sh"
-set noshelltemp
 
 " Windowing Options {{{
 " Windows that need winfixheight:
@@ -792,7 +791,7 @@ if has('autocmd')
           \ endif
 
     " Set the compiler to the filetype by default
-    au FileType * try | if ! exists("b:current_compiler") | exe 'compiler ' . &filetype | endif | catch | endtry
+    au FileType * try | exe 'compiler ' . &filetype | catch | endtry
 
     try
       " if we have a Vim which supports QuickFixCmdPost (Vim7),
@@ -823,7 +822,7 @@ if has('autocmd')
 
     " Change the current directory to the location of the
     " file being edited.
-    "com! -nargs=0 -complete=command Bcd lcd %:p:h
+    com! -nargs=0 -complete=command Bcd lcd %:p:h
 
     " Special less.sh and man modes {{{
     fun! <SID>check_pager_mode()
@@ -867,7 +866,6 @@ let g:c_impl_defined = 1
 " }}}
 
 " Plugin options {{{
-let g:ropevim_vim_completion=1
 let g:GetLatestVimScripts_allowautoinstall = 1
 let g:LustyExplorerSuppressRubyWarning = 1
 let g:LargeFile = 10
