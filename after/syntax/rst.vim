@@ -25,3 +25,6 @@ hi link rstEnumeratedList Operator
 hi link rstBulletedList   Operator
 hi! link rstEmphasis       rstItalic
 hi! link rstStrongEmphasis rstBold
+execute 'syn region rstComment contained' .
+      \ ' start=/.*/'
+      \ ' end=/^\s\@!/ contains=rstTodo,vimModeline'
