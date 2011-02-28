@@ -1,1 +1,0 @@
-DiffGitCached | wincmd p
