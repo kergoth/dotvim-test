@@ -125,38 +125,6 @@ TODO
   - Fails with multi-line function definitions
   - Fails with nested function definitions
 
-- To Test
-
-  - https://github.com/mbadran/headlights
-
-    - I tried this, but got an error (list index out of range).  Need to test
-      this under gtk+ to see if it's a MacVim specific problem.
-
-  - https://github.com/vim-scripts/AutoFold.vim
-  - https://github.com/vim-scripts/easytags.vim
-  - https://github.com/nathanaelkane/vim-indent-guides
-  - http://majutsushi.github.com/tagbar/ (alternative to taglist)
-  - https://github.com/vim-scripts/indentpython.vim--nianyang
-  - https://github.com/alfredodeza/pytest.vim
-  - https://github.com/vim-scripts/VimPdb
-  - https://github.com/vim-scripts/NERD_Tree-and-ack
-  - https://github.com/vim-scripts/toner.vim
-
-  - svndiff, gitdiff, etc
-  - quiltdiff: http://www.vim.org/scripts/script.php?script_id=2148
-  - foldsearch: http://www.vim.org/scripts/script.php?script_id=2302
-  - vim-git-branch-info: http://github.com/taq/vim-git-branch-info
-  - buffergrep: http://www.vim.org/scripts/script.php?script_id=2255
-  - unimpaired.vim: http://www.vim.org/scripts/script.php?script_id=1590
-  - python_match.vim: http://www.vim.org/scripts/script.php?script_id=386
-  - abolish.vim: http://www.vim.org/scripts/script.php?script_id=1545
-
-- Cute concept, but not useful and/or stable at this time
-
-  - css_folding.vim: http://www.vim.org/scripts/script.php?script_id=3153
-  - smartparen: http://www.vim.org/scripts/script.php?script_id=3210
-  - quotes: http://www.vim.org/scripts/script.php?script_id=3209
-
 Personal Notes / Reference:
 ---------------------------
 
