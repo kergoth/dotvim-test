@@ -776,8 +776,9 @@ if has('autocmd')
     au!
 
     if has('persistent_undo')
-      au BufReadPre .netrwhist setlocal noundofile
-      au BufReadPre $TEMP/* setlocal noundofile
+      au BufReadPre .netrwhist set noundofile
+      au BufReadPre $TEMP/* set noundofile
+      au BufReadPre .git/COMMIT_EDITMSG set noundofile
     endif
 
     " Reload file with the correct encoding if fenc was set in the modeline
