@@ -13,6 +13,8 @@ Included Bundles
     - pythoncomplete
 
 - align: Help folks to align text, eqns, declarations, tables, etc
+- bitbake: Syntax highlighting, indentation settings, new file skeleton for
+  BitBake recipes and configuration files
 - bufexplorer: Buffer Explorer / Browser
 - c-syntax: C Syntax Extensions
 - changesplugin: indicate changes of a buffer
