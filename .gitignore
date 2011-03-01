@@ -6,3 +6,5 @@ tmp/
 yankring_history_v2.txt
 /sessions/*.vim
 /bundle/
+/tags
+/.tags
