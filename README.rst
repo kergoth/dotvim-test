@@ -201,6 +201,12 @@ Personal Notes / Reference:
       - <leader>ci: comment individually
       - <leader>cu: uncomment individually
 
+    - python_import
+
+      - <leader>i: sort and clean up a python import block.  When in normal
+        mode, operates against the current paragraph.  When in visual mode,
+        operates against the selected lines.
+
     - [modelines] <leader>im: insert modeline
     - [hilinks] <leader>hlt: show highlighting groups of mouseover
 
