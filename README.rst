@@ -31,7 +31,6 @@ Included Bundles
 - detectindent: Automatically detect indent (expandtab, shiftwidth, tabstop)
   settings
 - diff_movement: Movement over diff hunks with ]] etc.
-- endwise: Wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 - fugitive: A Git wrapper so awesome, it should be illegal
 - gist: vimscript for gist.github.com
 - git: Vim Git runtime files
@@ -88,6 +87,7 @@ Included Bundles
 
   - Used by the lazy fork of snipmate
 
+- unimpaired: Pairs of handy bracket mappings
 - vis: Extended Visual Mode Commands, Substitutes, and Searches
 - yankring: Maintains a history of previous yanks, changes and deletes
 
