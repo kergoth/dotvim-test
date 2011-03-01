@@ -9,6 +9,10 @@ let g:loaded_tip810 = 1
 " http://vim.wikia.com/wiki/Highlight_long_lines
 autocmd BufWinEnter * :call ApplyTextwidthOverflowHighlighting()
 function! ApplyTextwidthOverflowHighlighting()
+  if &buftype == "quickfix"
+    return
+  endif
+
 " remove the previous application in this window
   if exists('w:textwidth_overflow_highlighting_match') &&
         \ exists('w:textwidth_overflow_highlighting_width') &&
