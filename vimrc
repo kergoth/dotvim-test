@@ -55,6 +55,7 @@ Bundle "https://github.com/tpope/vim-pathogen.git"
 Bundle "https://github.com/tpope/vim-repeat.git"
 Bundle "https://github.com/tpope/vim-speeddating.git"
 Bundle "https://github.com/tpope/vim-surround.git"
+Bundle "https://github.com/tpope/vim-unimpaired.git"
 
 Bundle "aftersyntaxc.vim"
 Bundle "Align"
