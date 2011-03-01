@@ -596,6 +596,15 @@ set nostartofline
 " Ignore binary files matched with grep by default
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%-OBinary\ file%.%#
 
+" Use ack if available
+if executable('ack')
+  set grepprg=ack\ -H\ --nocolor\ --nogroup\ --column\ $*\ /dev/null
+  set grepformat=%f:%l:%c:%m
+elseif executable('ack-grep')
+  set grepprg=ack-grep\ -H\ --nocolor\ --nogroup\ --column\ $*\ /dev/null
+  set grepformat=%f:%l:%c:%m
+endif
+
 " Show the Vim7 tab line only when there is more than one tab page.
 " See :he tab-pages for details.
 try
