@@ -129,6 +129,14 @@ fun! StatusLine_FileName()
   endtry
   return fn
 endfun
+
+fun! StatusLine_GitBranch()
+  if exists('g:loaded_fugitive')
+    return fugitive#statusline()
+  else
+    return ''
+  endif
+endfun
 " }}}
 
 " Keymaps and Commands {{{
@@ -606,7 +614,7 @@ if has('statusline')
   set statusline+=%-3.3n\                      " buffer number
   set statusline+=%(%{StatusLine_FileName()}\ %) " filename
   set statusline+=%h%m%r%w                     " status flags
-  set statusline+=%{fugitive#statusline()}     " current git branch
+  set statusline+=%{StatusLine_GitBranch()}    " current git branch
   set statusline+=%((%{StatusLine_Tlist_Info()})\ %) " tag name
 
   set statusline+=%(\[%{&ft}]%)               " file type
