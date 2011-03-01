@@ -938,6 +938,7 @@ let g:NERD_comment_whole_lines_in_v_mode = 1
 let g:NERD_left_align_regexp = '.*'
 let g:NERD_right_align_regexp = '.*'
 let g:NERD_space_delim_filetype_regexp = '.*'
+let g:NERDTreeQuitOnOpen = 1
 let g:HL_HiCurLine = 'StatusLine'
 let g:Modeliner_format = 'fenc= sts= sw= ts= et'
 let b:super_sh_indent_echo = 0
