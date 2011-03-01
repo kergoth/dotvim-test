@@ -16,12 +16,6 @@ Included Bundles
 
   - bitbake: Syntax highlighting, indentation settings, new file skeleton for
     BitBake recipes and configuration files
-  - exec-selected-python: execute the selected lines of python code
-  - hi-py-decorators: highlight python decorators
-  - kergoth: Personal settings, plugins, tweaks
-  - pythongotofile: allow jumping to an imported python module with 'gf'
-  - snipmate-skeleton: Trivial implementation of skeleton files using snipmate
-  - tips: Various snippets of vimscript pulled from the Vim tips site(s)
 
 - External
 
