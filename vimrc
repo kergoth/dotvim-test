@@ -472,18 +472,15 @@ set backup
 set writebackup
 " Rename the file to the backup when possible.
 set backupcopy=auto
+
 " Don't store all the backup and swap files in the current working dirctory.
-if has("win32")
-  let &backupdir = './_vimtmp,' . $TEMP . ',c:/tmp,c:/temp'
-else
-  let &backupdir = './.vimtmp,' . $HOME . '/.vim/tmp,/var/tmp,' . $TEMP
-endif
-let &directory = &backupdir
+set backupdir=~/.vim/tmp/backup
+set directory=~/.vim/tmp/swap
 
 " Persistent undo
 if has('persistent_undo')
   set undofile
-  let &undodir = &backupdir
+  set undodir=~/.vim/tmp/undo
 endif
 
 set pastetoggle=<Leader>P
