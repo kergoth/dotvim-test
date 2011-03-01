@@ -193,13 +193,6 @@ Personal Notes / Reference:
         change/insert surrounding characters
       - S (visual mode): change/insert surrounding characters, separate lines
 
-    - align
-
-      - <leader>adec: align C declarations
-      - <leader>acom: align comments
-      - <leader>afnc: align ansi-style C function input arguments
-      - <leader>Htd: align html tables
-
     - nerdcommenter
 
       - <leader>cs: apply 'sexy' comment to line(s)

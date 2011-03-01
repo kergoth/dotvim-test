@@ -788,6 +788,7 @@ let g:c_impl_defined = 1
 " }}}
 
 " Plugin options {{{
+let g:loaded_AlignMapsPlugin = '1'
 let g:python_fold_imports_level = '2'
 let g:python_fold_comments_level = '2'
 let g:pyflakes_use_quickfix = 0

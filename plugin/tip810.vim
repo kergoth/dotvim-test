@@ -39,7 +39,6 @@ function! ApplyTextwidthOverflowHighlighting()
   endif
 endfunction
 
-nnoremap <Leader>tw :call ToggleTextwidthOverflowHighlighting()<Enter>
 function! ToggleTextwidthOverflowHighlighting()
   if exists('b:textwidth_overflow_highlighting_disabled')
     unlet b:textwidth_overflow_highlighting_disabled
@@ -48,3 +47,5 @@ function! ToggleTextwidthOverflowHighlighting()
   endif
   call ApplyTextwidthOverflowHighlighting()
 endfunction
+
+com! -nargs=0 ToggleTextwidthOverflowHighlighting call ToggleTextwidthOverflowHighlighting()
