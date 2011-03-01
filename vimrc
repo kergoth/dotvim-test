@@ -255,7 +255,6 @@ set cinkeys=0{,0},0),:,0#,!^F,o,O,e
 " Settings {{{
 
 filetype off
-call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 set secure
@@ -911,6 +910,70 @@ let g:bufExplorerOpenMode = 1
 " }}}
 " }}}
 
+" Bundles {{{1
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+" lazysnipmate {{{2
+Bundle 'https://github.com/MarcWeber/vim-addon-mw-utils'
+Bundle 'https://github.com/tomtom/tlib_vim'
+Bundle 'https://github.com/vim-scripts/lazysnipmate'
+" }}}2
+
+Bundle "git://git.wincent.com/command-t.git"
+Bundle "https://github.com/chrisbra/changesPlugin.git"
+Bundle "https://github.com/ciaranm/detectindent.git"
+Bundle "https://github.com/ciaranm/securemodelines.git"
+Bundle "https://github.com/ehamberg/vim-cute-python.git"
+Bundle "https://github.com/ervandew/supertab.git"
+Bundle "https://github.com/guns/jellyx.vim"
+Bundle "https://github.com/kergoth/vim-golang.git"
+Bundle "https://github.com/kergoth/vim-HiLinkTrace"
+Bundle "https://github.com/mattn/gist-vim.git"
+Bundle "https://github.com/rson/vim-conque.git"
+Bundle "https://github.com/scrooloose/nerdcommenter.git"
+Bundle "https://github.com/scrooloose/nerdtree.git"
+Bundle "https://github.com/sjl/gundo.vim"
+Bundle "https://github.com/timcharper/gitosis.vim.git"
+Bundle "https://github.com/tmatilai/gitolite.vim.git"
+Bundle "https://github.com/tpope/vim-endwise.git"
+Bundle "https://github.com/tpope/vim-fugitive.git"
+Bundle "https://github.com/tpope/vim-git.git"
+Bundle "https://github.com/tpope/vim-markdown.git"
+Bundle "https://github.com/tpope/vim-pathogen.git"
+Bundle "https://github.com/tpope/vim-repeat.git"
+Bundle "https://github.com/tpope/vim-speeddating.git"
+Bundle "https://github.com/tpope/vim-surround.git"
+
+Bundle "aftersyntaxc.vim"
+Bundle "Align"
+Bundle "bufexplorer.zip"
+Bundle "CountJump"
+Bundle "CSApprox"
+Bundle "diff_movement"
+Bundle "github-theme"
+Bundle "help_movement"
+Bundle "LargeFile"
+Bundle "luainspect.vim"
+Bundle "ManPageView"
+Bundle "matchit.zip"
+Bundle "Modeliner"
+Bundle "NERD_tree-Project"
+Bundle "pyflakes.vim"
+Bundle "pylint.vim"
+Bundle "Python-2.x-Standard-Library-Reference"
+Bundle "Python-3.x-Standard-Library-Reference"
+Bundle "python_import.vim"
+Bundle "reload.vim"
+Bundle "session.vim--Odding"
+Bundle "shell.vim--Odding"
+Bundle "Smart-Tabs"
+Bundle "taglist.vim"
+Bundle "vis"
+Bundle "YankRing.vim"
+" }}}1
+
+" {{{1 Per machine vim settings
 if !exists('$HOSTNAME') && executable('hostname')
   let $HOSTNAME = substitute(system('hostname'), "\n", "", "")
 endif
