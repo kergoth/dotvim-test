@@ -2,9 +2,7 @@
 " it easier to mark up its contents.
 syn match   pythonComment	"#.*$" contains=pythonTodo,vimModeline
 
-syn match   pythonDecorator	"@" display contains=pythonDecoratorFunction nextgroup=pythonDecoratorFunction skipwhite
-syn match   pythonDecoratorFunction	"[a-zA-Z_][a-zA-Z0-9_.]*" display contained nextgroup=pythonFunction skipwhite
-hi link pythonDecoratorFunction pythonDecorator
+syn match   pythonDecorator "@[a-zA-Z_][a-zA-Z0-9_.]*$" skipwhite
 
 syn clear pythonStatement
 syn keyword pythonStatement	break continue del
