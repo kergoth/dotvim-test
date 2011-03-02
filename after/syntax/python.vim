@@ -15,3 +15,13 @@ syn match   pythonFunction	"[a-zA-Z_][a-zA-Z0-9_]*" contained
 if !exists("python_no_comment_fold")
   syn match   pythonMultiLineComment "\(^\s*#.*\n\)\{2,}" contains=pythonComment transparent fold
 endif
+
+if !exists("python_no_import_fold")
+  syn clear pythonInclude
+  syn match pythonInclude "\(import\|from\)"
+
+  syn match pythonImport "import .*" contains=pythonInclude,pythonStatement
+  syn match pythonImportFrom "from .*" contains=pythonInclude
+  syn match pythonMultiLineImport "\(^\s*import .*\n\|\n\n\|from .*\n\)\{2,}"
+        \ contains=pythonImport,pythonImportFrom transparent fold
+endif
