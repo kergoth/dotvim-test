@@ -75,7 +75,6 @@ Included Bundles
 - securemodelines: Secure, user-configurable modeline support
 - session: Extended session management for Vim
 - shell: Improved integration between Vim and its environment
-- smarttabs: Use tabs for indent, spaces for alignment
 - snipmate: TextMate-style snippets for Vim
 - speeddating: use CTRL-A/CTRL-X to increment dates, times, and more
 - supertab: aims to provide tab completion to satisfy all your insert
