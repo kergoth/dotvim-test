@@ -144,10 +144,10 @@ let mapleader = ","
 let maplocalleader = ","
 
 map <leader>del :g/^\s*$/d<CR>         ' Delete Empty Lines
-map <leader>ddql :%s/^>\s*>.*//g<CR>   ' Delete Double Quoted Lines
-map <leader>ddr :s/\.\+\s*/. /g<CR>    ' Delete Dot Runs
-map <leader>dsr :s/\s\s\+/ /g<CR>      ' Delete Space Runs
-map <leader>dtw :%s/\s\+$//g<CR>       ' Delete Trailing Whitespace
+map <leader>ddql :%s/^>\s*>.*//<CR>   ' Delete Double Quoted Lines
+map <leader>ddr :s/\.\+\s*/. /<CR>    ' Delete Dot Runs
+map <leader>dsr :s/\s\s\+/ /<CR>      ' Delete Space Runs
+map <leader>dtw :%s/\s\+$//<CR>       ' Delete Trailing Whitespace
 
 nmap <leader>l :set list!<CR>
 
