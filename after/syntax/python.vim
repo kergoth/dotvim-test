@@ -8,6 +8,10 @@ syn clear pythonStatement
 syn keyword pythonStatement	as assert break continue del exec global
 syn keyword pythonStatement	lambda nonlocal pass print return with yield
 
+syn match   pythonDefStatement /^\s*\%(def\|class\)/
+  \ nextgroup=pythonFunction skipwhite
+hi def link pythonDefStatement pythonStatement
+
 syn region  pythonFunctionFold	start="^\z(\s*\)\%(def\|class\)\>"
   \ end="\ze\%(\s*\n\)\+\%(\z1\s\)\@!." fold transparent
 syn match   pythonFunction	"[a-zA-Z_][a-zA-Z0-9_]*" contained
