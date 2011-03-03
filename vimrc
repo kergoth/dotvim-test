@@ -997,4 +997,8 @@ let g:bufExplorerOpenMode = 1
 if !exists('$HOSTNAME') && executable('hostname')
   let $HOSTNAME = substitute(system('hostname'), "\n", "", "")
 endif
+
+augroup PerMachineVimrc
+  au BufWritePost vimrc.$HOSTNAME source %
+augroup END
 runtime vimrc.$HOSTNAME
