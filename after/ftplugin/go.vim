@@ -23,3 +23,6 @@ set sw=4 ts=4 sts=0 noet
 set comments=s1:/*,mb:*,ex:*/,://
 set commentstring=//\ %s
 set foldmethod=syntax
+
+let g:go_highlight_space_tab_error = 0
+let g:go_highlight_trailing_whitespace_error = 0

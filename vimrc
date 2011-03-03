@@ -860,29 +860,9 @@ if has('autocmd')
 endif
 " }}}
 
-" Syntax options {{{
+" Script options {{{
 let g:print_syntax = 'github' " color scheme to use for printing
-let g:go_highlight_array_whitespace_error = 1
-let g:go_highlight_chan_whitespace_error = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_trailing_whitespace_error = 0
-let g:xml_syntax_folding = 1
-let d_hl_operator_overload = 1
 let g:doxygen_enhanced_color = 0
-let g:html_use_css = 1
-let g:use_xhtml = 1
-let g:perl_extended_vars = 1
-let g:sh_fold_enabled = 1
-let g:c_gnu = 1
-let g:c_posix = 1
-let g:c_math = 1
-let g:c_C99 = 1
-let g:c_C94 = 1
-let g:c_impl_defined = 1
-" }}}
-
-" Plugin options {{{
 let g:loaded_AlignMapsPlugin = '1'
 let g:python_fold_imports_level = '2'
 let g:python_fold_comments_level = '2'

@@ -1,6 +1,8 @@
-setlocal foldmethod=syntax
-setlocal commentstring=/*\ %s\ */
+set commentstring=/*\ %s\ */
 " Add doxygen style comments
-setlocal comments-=://
-setlocal comments+=:///
-setlocal comments+=://
+set comments-=://
+set comments+=:///
+set comments+=://
+set foldmethod=syntax
+
+let g:c_gnu = 1
