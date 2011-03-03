@@ -260,6 +260,7 @@ command! -nargs=0 LocalTags let g:easytags_file = './.tags' | HighlightTags
 
 " Fonts {{{
 fun! SetFont(fonts, gtkfont, fontsize)
+  let g:fontset = 1
   if has("gui_running")
     if has('gui_gtk2')
       " Gtk2 has to be handled specially, because the font fallback does not
@@ -284,13 +285,26 @@ fun! SetFont(fonts, gtkfont, fontsize)
   endif
 endfun
 
+fun! SetFontCmd()
+  if exists('g:fontset')
+    call SetFont(g:fonts, g:gtkfont, g:fontsize)
+  else
+    augroup SetFont
+      au VimEnter * call SetFont(g:fonts, g:gtkfont, g:fontsize)
+    augroup END
+  endif
+endfun
+
+com! -nargs=0 SetFont call SetFontCmd()
+
+
 let g:fontsize = "11"
 " In order of preference, best to worst
 let g:fonts = ['Consolas', 'Inconsolata', 'Menlo', 'DejaVu Sans Mono',
             \  'Monaco', 'Andale Mono', 'Courier']
 let g:gtkfont = 'Inconsolata'
 
-au VimEnter * call SetFont(g:fonts, g:gtkfont, g:fontsize)
+SetFont
 " }}}
 
 " Indentation {{{
