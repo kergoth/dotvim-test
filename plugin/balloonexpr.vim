@@ -31,7 +31,7 @@ if (v:version >= 700) && has('balloon_eval')
       endif
     endif
 
-    return join(lines, has('balloon_multiline') ? '\n' : ' ')
+    return join(lines, has('balloon_multiline') ? "\n" : ' ')
   endfun
 
   set ballooneval
