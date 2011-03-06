@@ -861,16 +861,15 @@ endif
 " }}}
 
 " Script options {{{
+let g:fullname = 'Chris Larson'
+let g:email = 'clarson@kergoth.com'
 let g:print_syntax = 'github' " color scheme to use for printing
 let g:doxygen_enhanced_color = 0
 let g:loaded_AlignMapsPlugin = '1'
 let g:python_fold_imports_level = '2'
 let g:python_fold_comments_level = '2'
 let g:pyflakes_use_quickfix = 0
-let g:snips_author = 'Chris Larson <clarson@kergoth.com>'
-let g:debianfullname = 'Chris Larson'
-let g:debianemail = 'clarson@kergoth.com'
-let g:changelog_username = 'Chris Larson <clarson@kergoth.com>'
+let g:snips_author = g:fullname . ' <' . g:email . '>'
 let g:NTPNames = ['build.xml', 'Makefile', '.project', '.lvimrc', 'SConstruct',
                 \ 'CMakeLists.txt', 'setup.py', 'configure.ac', 'configure.in']
 let g:session_autosave = 1
