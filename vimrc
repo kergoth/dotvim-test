@@ -10,16 +10,10 @@ if has('win32')
   " We use this rather than 'behave mswin', as the latter makes GVim act like
   " other windows applications, rather than like Vim.
   source $VIMRUNTIME/mswin.vim
-
-  let s:prefix = "_"
 else
-  let s:prefix = "."
-endif
-behave xterm
-
-if has('unix')
   let $TEMP = '/tmp'
 endif
+behave xterm
 
 " Bundles {{{1
 set rtp+=~/.vim/vundle/
@@ -416,16 +410,6 @@ set ttybuiltin
 set lazyredraw
 
 " Windowing Options {{{
-" Windows that need winfixheight:
-"   [ ] minibufexpl
-" Windows that need winfixwidth:
-"   [ ] Taglist
-"   [ ] Bufexplorer
-"   [x] VTreeExplorer
-" Also set winminheight and winminwidth possibly, as the fix height and fix
-" width options are not always obeyed (if running out of room), while the
-" minimums are hard minimums. (done for vtreeexplorer)
-
 " Window resize behavior when splitting
 set noequalalways
 set eadirection=both
@@ -690,8 +674,6 @@ if v:version >= 700
 endif
 
 " Show nonprintable characters like hard tabs
-"   NOTE: No longer showing trailing spaces this way, as those
-"   are being highlighted in red, along with spaces before tabs.
 set nolist
 
 if (&termencoding == 'utf-8') || has('gui_running')
@@ -866,8 +848,6 @@ let g:email = 'clarson@kergoth.com'
 let g:print_syntax = 'github' " color scheme to use for printing
 let g:doxygen_enhanced_color = 0
 let g:loaded_AlignMapsPlugin = '1'
-let g:python_fold_imports_level = '2'
-let g:python_fold_comments_level = '2'
 let g:pyflakes_use_quickfix = 0
 let g:snips_author = g:fullname . ' <' . g:email . '>'
 let g:NTPNames = ['build.xml', 'Makefile', '.project', '.lvimrc', 'SConstruct',
@@ -888,10 +868,7 @@ endif
 if !has('lua') && !executable('lua')
   let g:loaded_luainspect = 1
 endif
-let g:quickfixsigns_classes = ['qfl']
 let g:SuperTabDefaultCompletionType = 'context'
-let g:rope_enable_shortcuts = 1
-let g:Tlist_Ctags_Cmd = 'ctags'
 let g:CSApprox_verbose_level = 0
 let g:pylint_onwrite = 0
 let g:syntastic_disabled_filetypes = ['python']
@@ -901,10 +878,7 @@ let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
 let g:yankring_history_dir = split(globpath(&rtp, 'tmp'), '\n')[0]
 let g:yankring_persist = 0
-let g:GetLatestVimScripts_allowautoinstall = 0
-let g:LustyExplorerSuppressRubyWarning = 1
 let g:LargeFile = 10
-let g:git_diff_spawn_mode = 1
 let g:secure_modelines_verbose = 1
 let g:secure_modelines_allowed_items = [
             \ "textwidth",    "tw",
@@ -920,39 +894,11 @@ let g:secure_modelines_allowed_items = [
             \ "rightleft",    "rl",   "norightleft", "norl",
             \ "wrap", "nowrap",
             \ ]
-let g:Tb_MinSize = 1
-let g:Tb_MaxSize = 1
-let g:Tb_SplitBelow = 0
-let g:Tb_VSplit = 0
-let g:Tb_cTabSwitchBufs = 0
-let g:Tb_cTabSwitchWindows = 0
-let loaded_bettermodified = 1
-let g:NERD_shut_up = 1
-let g:NERD_comment_whole_lines_in_v_mode = 1
-let g:NERD_left_align_regexp = '.*'
-let g:NERD_right_align_regexp = '.*'
-let g:NERD_space_delim_filetype_regexp = '.*'
+let g:NERDCommentWholeLinesInVMode = 1
 let g:NERDTreeQuitOnOpen = 1
-let g:HL_HiCurLine = 'StatusLine'
 let g:Modeliner_format = 'fenc= sts= sw= ts= et'
-let b:super_sh_indent_echo = 0
 
-" rcsvers.vim {{{
-let g:rvTempDir = '/tmp'
-" Shared rcs save directory
-" let g:rvSaveDirectoryType = 1
-let g:rvSaveDirectoryName = '.rcs/'
-" let g:rvSaveIfPreviousRCSFileExists = 0
-" let g:rvSaveIfRCSExists = 0
-let g:rvDescMsgPrompt = 0
-" let g:rvExcludeExpression = '\c\.usr\|\c\.tmp|\c.swp'
-let g:rvIncludeExpression = ''
-if has('win32') && ! has('gui_win32')
-  let g:rvUseCygPathFiltering = 1
-endif
-" }}}
-
-" Explorer/Tags/Windows options {{{
+let g:Tlist_Ctags_Cmd = 'ctags'
 let g:Tlist_Exit_OnlyWindow = 1
 let g:Tlist_Show_Menu = 0
 let g:Tlist_Enable_Fold_Column = 0
@@ -968,21 +914,10 @@ else
   let g:Tlist_Inc_Winwidth = 0
 endif
 
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplMinSize = 1
-let g:miniBufExplMaxSize = 1
-
-let g:treeExplVertical = 1
-let g:treeExplDirSort = 1
-let g:treeExplindent = 3
-let g:treeExplWinSize = 28
-let g:treeExplMinSize = 30
-
-let g:bufExlporerDefaultHelp = 0
+let g:bufExplorerDefaultHelp = 0
 let g:bufExplorerSortBy = 'mru'
 let g:bufExplorerSplitType = 'v'
 let g:bufExplorerOpenMode = 1
-" }}}
 " }}}
 
 " {{{1 Per machine vim settings
