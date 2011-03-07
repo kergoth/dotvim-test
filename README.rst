@@ -93,15 +93,20 @@ Included Bundles
 Setup
 -----
 
+Repository setup::
+
   git clone https://github.com/kergoth/dotvim-test ~/.vim
   ln -sf .vim/vimrc ~/.vimrc
+
+Install the above bundles::
+
+  :BundleInstall
+
+Command-t bundle setup::
 
   cd ~/.vim/ruby/command-t
   ruby extconf.rb
   make
-
-  # From Vim, to install the above bundles
-  :BundleInstall
 
 TODO
 ----
