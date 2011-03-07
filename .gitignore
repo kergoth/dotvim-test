@@ -2,9 +2,11 @@
 .viminfo
 .netrwhist
 .rope_project
-tmp/
 yankring_history_v2.txt
-/sessions/*.vim
+/tmp/backup/*
+/tmp/swap/*
+/tmp/undo/*
+/sessions/
 /bundle/
 /tags
 /.tags
