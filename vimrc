@@ -180,6 +180,9 @@ nmap <silent> <Down> :wincmd j<CR>
 nmap <silent> <Left> :wincmd h<CR>
 nmap <silent> <Right> :wincmd l<CR>
 
+" Make 'Y' follow 'D' and 'C' conventions
+nnoremap Y y$
+
 " Select just-pasted text
 nnoremap <leader>v V`]
 
