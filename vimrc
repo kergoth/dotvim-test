@@ -131,6 +131,14 @@ fun! StatusLine_GitBranch()
     return ''
   endif
 endfun
+
+fun! StatusLine_Pasting()
+  if &paste
+    return '[paste]'
+  else
+    return ''
+  endif
+endfun
 " }}}
 
 " Keymaps and Commands {{{
@@ -642,6 +650,7 @@ if has('statusline')
   set statusline+=%-3.3n\                      " buffer number
   set statusline+=%(%{StatusLine_FileName()}\ %) " filename
   set statusline+=%h%m%r%w                     " status flags
+  set statusline+=%{StatusLine_Pasting()}      " 'paste' option state
   set statusline+=%{StatusLine_GitBranch()}    " current git branch
   set statusline+=%((%{StatusLine_Tlist_Info()})\ %) " tag name
 
