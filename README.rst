@@ -90,6 +90,16 @@ Included Bundles
 - vis: Extended Visual Mode Commands, Substitutes, and Searches
 - yankring: Maintains a history of previous yanks, changes and deletes
 
+Setup
+-----
+
+  git clone https://github.com/kergoth/dotvim-test ~/.vim
+  ln -sf .vim/vimrc ~/.vimrc
+
+  cd ~/.vim/ruby/command-t
+  ruby extconf.rb
+  make
+
 TODO
 ----
 
