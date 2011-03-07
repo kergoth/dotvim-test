@@ -77,9 +77,8 @@ Bundle "shell.vim--Odding"
 Bundle "taglist.vim"
 Bundle "vis"
 Bundle "YankRing.vim"
-" }}}1
 
-" Functions {{{
+" Functions {{{1
 fun! Print(...)
   let l:colo = g:colors_name
   let l:printcolo = a:0 == 1 ? a:1 : g:print_syntax
@@ -139,9 +138,8 @@ fun! StatusLine_Pasting()
     return ''
   endif
 endfun
-" }}}
 
-" Keymaps and Commands {{{
+" Keymaps and Commands {{{1
 let mapleader = ","
 let maplocalleader = ","
 
@@ -281,7 +279,6 @@ com! -nargs=0 -complete=command Bcd lcd %:p:h
 command! -nargs=+ Grep execute 'silent grep! <args>' | redraw!
 command! -nargs=0 LocalTags let g:easytags_file = './.tags' | HighlightTags
 " }}}
-
 " Fonts {{{
 fun! SetFont(fonts, gtkfont, fontsize)
   let g:fontset = 1
@@ -330,7 +327,6 @@ let g:gtkfont = 'Inconsolata'
 
 SetFont
 " }}}
-
 " Indentation {{{
 set smarttab
 
@@ -363,7 +359,6 @@ set nosmartindent
 set cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,l0,g0,hs,ps,ts,+s,c3,C0,(0,us,\U0,w0,m0,j0,)20,*30
 set cinkeys=0{,0},0),:,0#,!^F,o,O,e
 " }}}
-
 " Settings {{{
 
 filetype off
@@ -684,9 +679,8 @@ augroup KergothIndentation
   au!
   au BufReadPost * if exists("loaded_detectindent") | exe "DetectIndent" | endif
 augroup END
-" }}}
 
-" Encoding {{{
+" Encoding {{{2
 " Termencoding will reflect the current system locale, but internally,
 " we use utf-8, and for files, we use whichever encoding from
 " &fileencodings was detected for the file in question.
@@ -701,7 +695,6 @@ endif
 
 " Most printers are Latin1, inform Vim so it can convert.
 set printencoding=latin1
-" }}}
 
 set dictionary+=/usr/share/dict/words
 
@@ -739,9 +732,8 @@ else
     set listchars+=trail:.
   endif
 endif
-" }}}
 
-" Colors {{{
+" Colors {{{2
 " Make sure the gui is initialized before setting up syntax and colors
 if has('gui_running')
   gui
@@ -805,9 +797,8 @@ if &t_Co > 2 || has('gui_running')
     augroup END
   endif
 endif
-" }}}
 
-" Autocommands {{{
+" Autocommands {{{1
 if has('autocmd')
   augroup Kergoth
     au!
@@ -882,9 +873,8 @@ if has('autocmd')
     " }}}
   augroup END
 endif
-" }}}
 
-" Script options {{{
+" Script options {{{1
 let g:fullname = 'Chris Larson'
 let g:email = 'clarson@kergoth.com'
 let g:print_syntax = 'github' " color scheme to use for printing
@@ -965,9 +955,8 @@ let g:bufExplorerDefaultHelp = 0
 let g:bufExplorerSortBy = 'mru'
 let g:bufExplorerSplitType = 'v'
 let g:bufExplorerOpenMode = 1
-" }}}
 
-" {{{1 Per machine vim settings
+" Per machine vim settings {{{1
 if !exists('$HOSTNAME') && executable('hostname')
   let $HOSTNAME = substitute(system('hostname'), "\n", "", "")
 endif
