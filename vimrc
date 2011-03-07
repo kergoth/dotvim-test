@@ -189,6 +189,8 @@ nnoremap <Leader>S :TlistShowPrototype<Enter>
 nnoremap <Leader>f :ToggleNERDTree<Enter>
 nnoremap <Leader>F :NERDTreeFind<Enter>
 
+nnoremap <silent> <Leader>yr :YRGetElem<CR>
+
 " When selecting with the mouse, copy to clipboard on release.
 vnoremap <LeftRelease> '+y<LeftRelease>gv
 vnoremap <RightRelease> '+y<RightRelease>gv
