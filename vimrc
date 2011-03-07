@@ -16,7 +16,7 @@ endif
 behave xterm
 
 " Bundles {{{1
-set rtp+=~/.vim/vundle/
+set runtimepath+=~/.vim/vundle/
 call vundle#rc()
 
 " lazysnipmate {{{2
@@ -104,6 +104,26 @@ function! Preserve(command)
   let @/ = _s
   call cursor(l, c)
 endfunction
+
+fun! SetFonts()
+  if has('gui_gnome') && executable('gconftool')
+    let gconf_path = '/desktop/gnome/interface/monospace_font_name'
+    let gconf_font = system('gconftool --get ' . gconf_path)
+    let &guifont = substitute(gconf_font, '\n', '', '')
+  elseif has('gui_gtk2')
+    let &guifont = g:gtkfont . ' ' . g:fontsize
+  else
+    let fontstrings = []
+    for font in g:fonts
+      if has('macunix') && has('gui')
+        let fontstrings += [font . ':h' . g:fontsize]
+      elseif has('gui_win32')
+        let fontstrings += [font . ':h' . g:fontsize . 'cANSI']
+      endif
+    endfor
+    let &guifont = join(fontstrings, ',')
+  endif
+endfun
 
 fun! StatusLine_Tlist_Info()
   if exists('g:loaded_taglist') &&
@@ -279,88 +299,7 @@ com! -nargs=0 -complete=command Bcd lcd %:p:h
 command! -nargs=+ Grep execute 'silent grep! <args>' | redraw!
 command! -nargs=0 LocalTags let g:easytags_file = './.tags' | HighlightTags
 " }}}
-" Fonts {{{
-fun! SetFont(fonts, gtkfont, fontsize)
-  let g:fontset = 1
-  if has("gui_running")
-    if has('gui_gtk2')
-      " Gtk2 has to be handled specially, because the font fallback does not
-      " appear to function correctly.  Instead of seeing an error message from
-      " vim when setting an invalid font, as it does on other platforms, it
-      " simply displays screwed up text, and as a result doesn't fall back to
-      " the next font in the &guifont list, so set it explicitly.
-      let &guifont = a:gtkfont . ' ' . a:fontsize
-    else
-      let fontstrings = []
-      for font in a:fonts
-        if has('gui_gtk2')
-          let fontstrings += [font . ' ' . a:fontsize]
-        elseif has('macunix') && has('gui')
-          let fontstrings += [font . ':h' . a:fontsize]
-        elseif has('gui_win32')
-          let fontstrings += [font . ':h' . a:fontsize . 'cANSI']
-        endif
-      endfor
-      let &guifont = join(fontstrings, ',')
-    endif
-  endif
-endfun
-
-fun! SetFontCmd()
-  if exists('g:fontset')
-    call SetFont(g:fonts, g:gtkfont, g:fontsize)
-  else
-    augroup SetFont
-      au VimEnter * call SetFont(g:fonts, g:gtkfont, g:fontsize)
-    augroup END
-  endif
-endfun
-
-com! -nargs=0 SetFont call SetFontCmd()
-
-
-let g:fontsize = "11"
-" In order of preference, best to worst
-let g:fonts = ['Consolas', 'Inconsolata', 'Menlo', 'DejaVu Sans Mono',
-            \  'Monaco', 'Andale Mono', 'Courier']
-let g:gtkfont = 'Inconsolata'
-
-SetFont
-" }}}
-" Indentation {{{
-set smarttab
-
-" Disable insertion of tabs as compression / indentation
-set expandtab
-
-" How many spaces a hard tab in the file is shown as, and how many
-" spaces are replaced with one hard tab when using sts != ts and noet.
-set tabstop=8
-
-" Indentation width (affects indentation plugins, indent based
-" folding, etc, and when smarttab is on, is used instead of ts/sts
-" for the indentation at beginning of line.
-set shiftwidth=4
-
-" Number of spaces that the tab key counts for when editing
-" Only really useful if different from ts, or if using et.
-" When 0, it is disabled.
-set softtabstop=4
-
-" Round indent to a multiple of 'shiftwidth'
-set shiftround
-
-set autoindent
-set copyindent
-set preserveindent
-set nosmartindent
-
-" Set the C indenting the way I like it
-set cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,l0,g0,hs,ps,ts,+s,c3,C0,(0,us,\U0,w0,m0,j0,)20,*30
-set cinkeys=0{,0},0),:,0#,!^F,o,O,e
-" }}}
 " Settings {{{
-
 filetype off
 filetype plugin indent on
 
@@ -379,8 +318,8 @@ if has('unix')
 endif
 
 " Reliant upon securemodelines.vim
-set modelines=5
 set nomodeline
+set modelines=5
 
 " Fast terminal, bump sidescroll to 1
 set sidescroll=1
@@ -434,19 +373,50 @@ set ttyfast
 set ttybuiltin
 set lazyredraw
 
-" Windowing Options {{{
 " Window resize behavior when splitting
 set noequalalways
 set eadirection=both
 
 set splitright
 set splitbelow
-" }}}
 
 " No annoying beeps
 set novisualbell
 set noerrorbells
 set vb t_vb=
+
+" Indentation {{{2
+set smarttab
+
+" Disable insertion of tabs as compression / indentation
+set expandtab
+
+" How many spaces a hard tab in the file is shown as, and how many
+" spaces are replaced with one hard tab when using sts != ts and noet.
+set tabstop=8
+
+" Indentation width (affects indentation plugins, indent based
+" folding, etc, and when smarttab is on, is used instead of ts/sts
+" for the indentation at beginning of line.
+set shiftwidth=4
+
+" Number of spaces that the tab key counts for when editing
+" Only really useful if different from ts, or if using et.
+" When 0, it is disabled.
+set softtabstop=4
+
+" Round indent to a multiple of 'shiftwidth'
+set shiftround
+
+set autoindent
+set copyindent
+set preserveindent
+set nosmartindent
+
+" Set the C indenting the way I like it
+set cinoptions=>s,e0,n0,f0,{0,}0,^0,:s,=s,l0,g0,hs,ps,ts,+s,c3,C0,(0,us,\U0,w0,m0,j0,)20,*30
+set cinkeys=0{,0},0),:,0#,!^F,o,O,e
+" }}}2
 
 " Default folding settings
 if has('folding')
@@ -479,7 +449,6 @@ endif
 " Tags search path
 set tags=./tags,tags,./.tags,.tags
 
-
 " Nifty completion menu
 set wildmenu
 set wildignore+=*.o,*~,*.swp,*.bak,*.pyc,*.pyo
@@ -496,6 +465,7 @@ set textwidth=0
 " Write backup files and do not remove them after exit.
 set backup
 set writebackup
+
 " Rename the file to the backup when possible.
 set backupcopy=auto
 
@@ -803,6 +773,8 @@ if has('autocmd')
   augroup Kergoth
     au!
 
+    au VimEnter * if empty(&guifont) | call SetFonts() | endif
+
     if has('persistent_undo')
       au BufReadPre .netrwhist set noundofile
       au BufReadPre $TEMP/* set noundofile
@@ -877,6 +849,12 @@ endif
 " Script options {{{1
 let g:fullname = 'Chris Larson'
 let g:email = 'clarson@kergoth.com'
+" In order of preference, best to worst
+let g:fonts = ['Consolas', 'Inconsolata', 'Menlo', 'DejaVu Sans Mono',
+            \  'Monaco', 'Andale Mono', 'Courier']
+let g:gtkfont = 'Inconsolata'
+let g:fontsize = "11"
+
 let g:print_syntax = 'github' " color scheme to use for printing
 let g:doxygen_enhanced_color = 0
 let g:loaded_AlignMapsPlugin = '1'
