@@ -180,6 +180,13 @@ nmap <silent> <Down> :wincmd j<CR>
 nmap <silent> <Left> :wincmd h<CR>
 nmap <silent> <Right> :wincmd l<CR>
 
+" Default to navigating by virtual lines, using the 'g' versions to move by
+" physical lines
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
+
 " Make 'Y' follow 'D' and 'C' conventions
 nnoremap Y y$
 
