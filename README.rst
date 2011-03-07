@@ -135,6 +135,8 @@ Personal Notes / Reference:
 
     - ctrl-^: switches between active and alternate buffer in the current window
     - ctrl-w s: split
+    - ctrl-a: increment
+    - ctrl-x: decrement
     - gt, gT: next, previous tab
     - g;, g, (normal mode): previous, next in the changelist
     - ctrl-o, ctrl-i: previous, next in the jumplist
