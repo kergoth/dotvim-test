@@ -100,6 +100,9 @@ Setup
   ruby extconf.rb
   make
 
+  # From Vim, to install the above bundles
+  :BundleInstall
+
 TODO
 ----
 
