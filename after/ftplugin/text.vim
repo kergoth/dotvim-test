@@ -3,4 +3,4 @@ set commentstring=
 set wrap
 set linebreak
 set nolist
-set complete+=k
+set complete+=kspell
