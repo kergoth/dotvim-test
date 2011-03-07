@@ -183,6 +183,9 @@ nmap <silent> <Right> :wincmd l<CR>
 " Select just-pasted text
 nnoremap <leader>v V`]
 
+" Write with sudo
+cmap w!! w !sudo tee % >/dev/null
+
 " Plugins
 nmap <leader>im :Modeliner<CR>
 
@@ -249,9 +252,6 @@ com! DiffOrig bel new | set bt=nofile | r # | 0d_ | diffthis
 " Change the current directory to the location of the
 " file being edited.
 com! -nargs=0 -complete=command Bcd lcd %:p:h
-
-com! -bar -nargs=0 SudoWrite
-      \ | :silent exe "write !sudo tee % >/dev/null" | silent edit!
 
 command! -nargs=+ Grep execute 'silent grep! <args>' | redraw!
 command! -nargs=0 LocalTags let g:easytags_file = './.tags' | HighlightTags
