@@ -594,6 +594,9 @@ if has('gui_running')
 
   set go=Acgae
 
+  " Prompt for confirmation where appropriate, rather than failing
+  set confirm
+
   try
     set fuoptions=maxvert,maxhorz
   catch
