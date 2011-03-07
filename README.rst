@@ -184,6 +184,13 @@ Personal Notes / Reference:
     - <leader>ev: same as above, in a vertical split
     - <leader>et: same as above, in a new tab
 
+  - File type specific:
+
+    - changelog
+
+      - <leader>o:
+        adds a new changelog entry for the current user for the current date.
+
   - Plugins:
 
     - surround
