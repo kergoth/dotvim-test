@@ -98,7 +98,7 @@ Repository setup::
   git clone https://github.com/kergoth/dotvim-test ~/.vim
   ln -sf .vim/vimrc ~/.vimrc
 
-Install the above bundles::
+Install the above bundles (from Vim)::
 
   :BundleInstall
 
