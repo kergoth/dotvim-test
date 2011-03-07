@@ -678,6 +678,8 @@ if v:version >= 700
   set spelllang=en_us
 endif
 
+set fillchars=vert:\|
+
 " Show nonprintable characters like hard tabs
 set nolist
 
