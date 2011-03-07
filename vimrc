@@ -467,7 +467,7 @@ set tags=./tags,tags,./.tags,.tags
 set wildmenu
 set wildignore+=*.o,*~,*.swp,*.bak,*.pyc,*.pyo
 
-set wildmode=list:longest
+set wildmode=longest,list
 
 set suffixes+=.in,.a,.lo,.o,.moc,.la,.closure
 
