@@ -299,7 +299,7 @@ com! -nargs=0 -complete=command Bcd lcd %:p:h
 command! -nargs=+ Grep execute 'silent grep! <args>' | redraw!
 command! -nargs=0 LocalTags let g:easytags_file = './.tags' | HighlightTags
 " }}}
-" Settings {{{
+" Settings {{{1
 filetype off
 filetype plugin indent on
 
@@ -940,6 +940,7 @@ if !exists('$HOSTNAME') && executable('hostname')
 endif
 
 augroup VimrcReload
+  au!
   au BufWritePost vimrc source %
   au BufWritePost vimrc.$HOSTNAME source %
 augroup END
