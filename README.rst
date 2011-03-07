@@ -90,8 +90,8 @@ Included Bundles
 - vis: Extended Visual Mode Commands, Substitutes, and Searches
 - yankring: Maintains a history of previous yanks, changes and deletes
 
-Setup
------
+Installation / Configuration
+----------------------------
 
 Repository setup::
 
@@ -107,6 +107,15 @@ Command-t bundle setup::
   cd ~/.vim/ruby/command-t
   ruby extconf.rb
   make
+
+To update the bundles in the future, if necessary (from Vim)::
+
+  :BundleInstall!
+
+To clean up the bundles (e.g. remove ones which were removed from the
+config, from Vim)::
+
+  :BundleClean
 
 TODO
 ----
