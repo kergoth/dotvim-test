@@ -207,6 +207,10 @@ inoremap <c-cr> <esc>A<cr>
 " Write with sudo
 cmap w!! w !sudo tee % >/dev/null
 
+" Since my map leader is ',', add another way to use the original ','
+nnoremap <c-e> ,
+vnoremap <c-e> ,
+
 " Plugins
 nmap <leader>im :Modeliner<CR>
 
