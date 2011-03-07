@@ -145,6 +145,10 @@ Personal Notes / Reference:
     - C == d$a
     - I == ctrl-i: insert text before the first non-blank in the line
     - S == ctrl-c == cc: delete line(s) and start insert
+    - xp: swap next two characters around
+    - guu: lowercase line
+    - gUU: uppercase line
+    - ~: invert case (upper->lower; lower->upper) of current character
 
   - Vimrc:
 
