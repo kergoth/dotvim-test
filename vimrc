@@ -886,7 +886,7 @@ let g:ConqueTerm_Color = 0
 let g:ConqueTerm_ReadUnfocused = 1
 let g:ConqueTerm_CloseOnEnd = 1
 if has('file_in_path')
-  let miscdir = finddir("misc", &runtimpath)
+  let miscdir = finddir("misc", &runtimepath)
   if miscdir
     let g:lua_inspect_path = miscdir
   endif
