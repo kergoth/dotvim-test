@@ -886,7 +886,7 @@ let g:ConqueTerm_Color = 0
 let g:ConqueTerm_ReadUnfocused = 1
 let g:ConqueTerm_CloseOnEnd = 1
 if has('file_in_path')
-  let miscdir = finddir("misc", &rtp)
+  let miscdir = finddir("misc", &runtimpath)
   if miscdir
     let g:lua_inspect_path = miscdir
   endif
@@ -902,8 +902,13 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
-let g:yankring_history_dir = split(globpath(&rtp, 'tmp'), '\n')[0]
 let g:yankring_persist = 0
+if has('file_in_path')
+  let tmpdir = finddir('tmp', &runtimepath)
+  if tmpdir
+    let g:yankring_history_dir = tmpdir
+  endif
+endif
 let g:LargeFile = 10
 let g:secure_modelines_verbose = 1
 let g:secure_modelines_allowed_items = [
