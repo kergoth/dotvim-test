@@ -183,6 +183,9 @@ nmap <silent> <Right> :wincmd l<CR>
 " Select just-pasted text
 nnoremap <leader>v V`]
 
+" Ctrl+return to add a new line below the current line in insert mode
+inoremap <c-cr> <esc>A<cr>
+
 " Write with sudo
 cmap w!! w !sudo tee % >/dev/null
 
