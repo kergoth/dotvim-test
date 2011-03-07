@@ -143,11 +143,11 @@ endfun
 let mapleader = ","
 let maplocalleader = ","
 
-map <leader>del :g/^\s*$/d<CR>         ' Delete Empty Lines
-map <leader>ddql :%s/^>\s*>.*//<CR>   ' Delete Double Quoted Lines
-map <leader>ddr :s/\.\+\s*/. /<CR>    ' Delete Dot Runs
-map <leader>dsr :s/\s\s\+/ /<CR>      ' Delete Space Runs
-map <leader>dtw :%s/\s\+$//<CR>       ' Delete Trailing Whitespace
+nmap <leader>del :g/^\s*$/d<CR>      " Delete Empty Lines
+nmap <leader>ddql :%s/^>\s*>.*//<CR> " Delete Double Quoted Lines
+nmap <leader>ddr :s/\.\+\s*/. /<CR>  " Delete Dot Runs
+nmap <leader>dsr :s/\s\s\+/ /<CR>    " Delete Space Runs
+nmap <leader>dtw :%s/\s\+$//<CR>     " Delete Trailing Whitespace
 
 nmap <leader>l :set list!<CR>
 
@@ -167,13 +167,13 @@ noremap <Leader>= gg=G
 noremap <Leader>gg ggVG
 
 " Pressing ,ss will toggle spell checking
-map <leader>ss :set spell!<CR>
+nmap <leader>ss :set spell!<CR>
 
 " Open a file in the same directory as the current file
-map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " quickfix things
 nmap <Leader>cwc :cclose<CR>
