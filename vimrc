@@ -677,6 +677,8 @@ endif
 set nolist
 
 if (&termencoding == 'utf-8') || has('gui_running')
+  set showbreak=↪
+
   set listchars=tab:»·,extends:…,precedes:…,eol:¬
 
   if v:version >= 700
@@ -687,6 +689,8 @@ if (&termencoding == 'utf-8') || has('gui_running')
     set listchars+=trail:·
   endif
 else
+  let &showbreak = '> '
+
   set listchars=tab:>-,extends:>
 
   if v:version >= 700
