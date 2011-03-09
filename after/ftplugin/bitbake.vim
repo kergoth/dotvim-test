@@ -1,11 +1,9 @@
 set commentstring=#\ %s
+
 set suffixesadd+=.bbclass
-set suffixesadd+=.bb
-set suffixesadd+=.inc
-set suffixesadd+=.conf
-setlocal path+=./classes;
-setlocal path+=./conf;
 setlocal path+=;
+setlocal path+=./classes;
+
 if exists('$BBPATH')
     for dir in split($BBPATH, ":")
         let &l:path += dir
