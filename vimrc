@@ -171,9 +171,6 @@ nmap <leader>dtw :%s/\s\+$//<CR>     " Delete Trailing Whitespace
 
 nmap <leader>l :set list!<CR>
 
-" Make <leader>' switch between ' and "
-nnoremap <leader>' ""yls<c-r>={'"': "'", "'": '"'}[@"]<cr><esc>
-
 " Reformat paragraph
 noremap <Leader>gp gqap
 
