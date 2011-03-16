@@ -853,6 +853,17 @@ let g:gtkfont = 'Inconsolata'
 let g:fontsize = "11"
 
 let g:print_syntax = 'github' " color scheme to use for printing
+
+" If we don't have ctags, silently don't load easytags
+for name in ['ctags', 'exuberant-ctags', 'exctags']
+  if executable(name)
+    let g:easytags_cmd = name
+  endif
+endfor
+if !exists('g:easytags_cmd')
+  let g:loaded_easytags = 1
+endif
+
 let g:doxygen_enhanced_color = 0
 let g:loaded_AlignMapsPlugin = '1'
 let g:pyflakes_use_quickfix = 0
