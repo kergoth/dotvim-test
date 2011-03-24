@@ -88,7 +88,6 @@ Included Bundles
 
 - unimpaired: Pairs of handy bracket mappings
 - vis: Extended Visual Mode Commands, Substitutes, and Searches
-- yankring: Maintains a history of previous yanks, changes and deletes
 
 Installation / Configuration
 ----------------------------

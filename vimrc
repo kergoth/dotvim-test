@@ -76,7 +76,6 @@ Bundle "session.vim--Odding"
 Bundle "shell.vim--Odding"
 Bundle "taglist.vim"
 Bundle "vis"
-Bundle "YankRing.vim"
 
 " Functions {{{1
 fun! Print(...)
@@ -896,13 +895,6 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
-let g:yankring_persist = 0
-if has('file_in_path')
-  let tmpdir = finddir('tmp', &runtimepath)
-  if tmpdir
-    let g:yankring_history_dir = tmpdir
-  endif
-endif
 let g:LargeFile = 10
 let g:secure_modelines_verbose = 1
 let g:secure_modelines_allowed_items = [
