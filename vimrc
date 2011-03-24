@@ -557,8 +557,10 @@ else
 endif
 
 if has('gui_running')
-  set lines=50
-  set columns=112
+  if has('vim_starting')
+    set lines=50
+    set columns=112
+  endif
 
   " Hide the mouse cursor while typing
   set mh
