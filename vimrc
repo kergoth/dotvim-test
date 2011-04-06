@@ -233,25 +233,6 @@ nnoremap <silent> <Leader>yr :YRGetElem<CR>
 vnoremap <LeftRelease> '+y<LeftRelease>gv
 vnoremap <RightRelease> '+y<RightRelease>gv
 
-" Mouse scroll wheel mappings only work in X11 and terminals
-if &ttymouse != '' ||
-      \ (has('gui_running') && has('unix'))
-  map <MouseDown> 3
-  map <MouseUp> 3
-
-  " meta (alt)+scrollwheel = scroll one line at a time
-  map <M-MouseDown> 
-  map <M-MouseUp> 
-
-  " ctrl+scrollwheel = scroll half a page
-  map <C-MouseDown> 
-  map <C-MouseUp> 
-
-  " shift+scrollwheel = unmapped
-  " unmap <S-MouseDown>
-  " unmap <S-MouseUp>
-endif
-
 " Execute an appropriate interpreter for the current file
 " If there is no #! line at the top of the file, it will
 " fall back to g:interp_<filetype>, and further to <filetype>.
