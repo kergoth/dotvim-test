@@ -150,6 +150,12 @@ TODO
   - Fails with multi-line function definitions
   - Fails with nested function definitions
 
+- debchangelog
+
+  - Enable the foldexpr from the ftplugin
+  - Add local mappings for the functions the ftplugin adds to the vim menus,
+    but does not map to anything
+
 Personal Notes / Reference:
 ---------------------------
 
