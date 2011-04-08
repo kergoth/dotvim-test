@@ -377,6 +377,8 @@ set novisualbell
 set noerrorbells
 set vb t_vb=
 
+set virtualedit+=block
+
 " Indentation {{{2
 set smarttab
 
