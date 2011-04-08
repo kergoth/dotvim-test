@@ -218,10 +218,6 @@ nnoremap <leader>v V`]
 " Ctrl+return to add a new line below the current line in insert mode
 inoremap <c-cr> <esc>A<cr>
 
-" Since my map leader is ',', add another way to use the original ','
-nnoremap <c-e> ,
-vnoremap <c-e> ,
-
 " Plugins
 nmap <leader>im :Modeliner<CR>
 
