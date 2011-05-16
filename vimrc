@@ -15,6 +15,8 @@ else
 endif
 behave xterm
 
+filetype off
+
 " Bundles {{{1
 set runtimepath+=~/.vim/vundle/
 call vundle#rc()
@@ -272,8 +274,8 @@ com! -bar -nargs=0 SudoWrite
 command! -nargs=+ Grep execute 'silent grep! <args>' | redraw!
 command! -nargs=0 LocalTags let g:easytags_file = './.tags' | HighlightTags
 " }}}
+
 " Settings {{{1
-filetype off
 filetype plugin indent on
 
 set secure
