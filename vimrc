@@ -762,6 +762,8 @@ if has('autocmd')
       au BufReadPre .git/COMMIT_EDITMSG set noundofile
     endif
 
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+
     " Reload file with the correct encoding if fenc was set in the modeline
     au BufReadPost * let b:reloadcheck = 1
     au BufWinEnter *
